@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <Header />
+    <QuestionBox />
+
+    <v-footer app>
+      <span>Trivia App Nonsense</span>
+    </v-footer>
+    
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/Header";
+import QuestionBox from "./components/QuestionBox";
 
 export default {
-  name: 'app',
   components: {
-    HelloWorld
+    Header,
+    QuestionBox
+  },
+  props: {},
+  data: () => ({}),
+  created() {
+    this.$vuetify.theme.dark = true;
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
